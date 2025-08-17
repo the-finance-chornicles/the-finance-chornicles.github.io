@@ -6,6 +6,13 @@ url: "https://qinyuehaothomas.github.io/Finance-Blog/"
 theme: minima
 plugins: [jekyll-feed, jekyll-seo-tag]
 
-minima:
-  date_format: "%Y-%m-%d"
-  show_excerpts: true
+
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      image_dir: "/assets/images/posts"
