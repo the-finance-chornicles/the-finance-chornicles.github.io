@@ -1,6 +1,5 @@
 ---
-layout: post
-title: About Us
+layout: base
 ---
 
 <section class="about-section">
