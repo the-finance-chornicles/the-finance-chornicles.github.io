@@ -1,6 +1,5 @@
 ---
-layout: post
-title: Contact Us
+layout: base
 ---
 
 <form id="emailForm">
@@ -21,6 +20,6 @@ title: Contact Us
     const subject = `Message from ${name}`;
     const body = `${message}\n\n---\nReply to: ${email}`;
     
-    window.location.href = `mailto:EXAMPLE@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:thefinancechronicles@gmail.com?subject=${subject}&body=${body}`;
   });
-</script>
+</script> 

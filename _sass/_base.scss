@@ -57,27 +57,26 @@ a {
   padding: 2rem 0;
 }
 
-// Header
-header {
-  background: $white;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid $border;
-  text-align: center;
-  
-  .logo {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+.navbar{
+  display: flex;
+  position: sticky;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  img{
+    display: block;
+    max-width: 2em;
+    margin: auto;
   }
-  
-  nav ul {
-    @include flex-center;
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
     list-style: none;
-    gap: 1.5rem;
-    
-    a {
-      font-size: 1.1rem;
-    }
+    li{ margin: 1em;}
   }
 }
 
@@ -194,11 +193,13 @@ header {
   }
   
   .post-cover {
-    height: 350px;
-    background: #e9ecef;
+    // background: #e9ecef;
     margin-bottom: 2rem;
     @include flex-center;
     color: $text-light;
+    img{
+      max-height: 350px;
+    }
   }
   
   .post-content {
@@ -244,68 +245,79 @@ header {
 }
 
 // Contact page
-.contact-page {
-  background: $white;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: $shadow;
-  text-align: center;
+/* Contact Form Styling */
+#emailForm {
   max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Georgia', serif;
+}
+
+#emailForm input,
+#emailForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: 'Georgia', serif;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+#emailForm input:focus,
+#emailForm textarea:focus {
+  outline: none;
+  border-color: #1a365d;
+  box-shadow: 0 0 0 3px rgba(26, 54, 93, 0.15);
+}
+
+#emailForm textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+#emailForm button {
+  background-color: #1a365d;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
   margin: 0 auto;
-  
-  h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.8rem;
+  width: 50%;
+  min-width: 150px;
+}
+
+#emailForm button:hover {
+  background-color: #0d2340;
+}
+
+/* Form Labels (if you add them later) */
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+  #emailForm {
+    margin: 1rem;
+    padding: 1.5rem;
   }
   
-  .contact-methods {
-    @include flex-center;
-    flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-    
-    .contact-card {
-      background: #f1f5f9;
-      padding: 1.5rem;
-      border-radius: 8px;
-      width: 100%;
-      
-      .contact-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: $primary;
-      }
-      
-      h3 {
-        margin-bottom: 0.5rem;
-      }
-      
-      p {
-        margin-bottom: 1rem;
-      }
-      
-      .email-button {
-        display: inline-block;
-        background: $primary;
-        color: $white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 4px;
-        font-weight: 600;
-        
-        &:hover {
-          background: $primary-dark;
-          text-decoration: none;
-        }
-      }
-    }
-  }
-  
-  .contact-note {
-    background: #f1f5f9;
-    padding: 1rem;
-    border-radius: 8px;
-    font-style: italic;
-    color: $text-light;
+  #emailForm button {
+    width: 100%;
   }
 }
 
@@ -343,7 +355,7 @@ footer {
 
 // Responsive design
 @media (max-width: $mobile) {
-  header nav ul {
+  nav ul {
     flex-direction: column;
     gap: 0.75rem;
   }
